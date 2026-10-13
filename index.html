@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ศึกพิชิตกฎหมาย ม.6</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Sarabun:wght@400;500;600;700&display=swap');
+
+:root {
+  --navy: #0b132b;
+  --navy-light: #1c2a4a;
+  --gold: #f4c96a;
+  --gold-hover: #ffdf91;
+  --muted: #aebcd4;
+  --line: #344665;
+  --accent-glow: rgba(244, 201, 106, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #f6f8ff;
+  font-family: 'Sarabun', system-ui, sans-serif;
+  background: radial-gradient(circle at 50% 0%, #1e2d4d 0%, #0b132b 75%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: env(safe-area-inset-top, 12px) 12px env(safe-area-inset-bottom, 24px) 12px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+}
+
+.brand-banner {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 11px;
+  color: var(--gold);
+  margin-bottom: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.panel {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(155deg, #182645, #101a33 70%);
+  border: 1px solid #364a6e;
+  border-radius: 22px;
+  padding: 24px 18px;
+  box-shadow: 0 15px 35px rgba(3, 10, 28, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.panel:before {
+  content: '⚖';
+  position: absolute;
+  right: -10px;
+  top: -30px;
+  font-size: 130px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+
+h1, h2 {
+  font-family: 'Kanit', sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 26px;
+  color: var(--gold);
+  margin: 4px 0 10px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 19px;
+  margin: 16px 0 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.6;
+  color: #d7e1f1;
+  font-size: 15px;
+  margin: 8px 0 16px;
+  text-align: center;
+}
+
+.desc-left {
+  text-align: left;
+  font-size: 14px;
+  background: #0d172e;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #283854;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin: 16px 0 6px;
+  font-weight: 700;
+  color: #f4d999;
+  font-size: 14px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 14px 16px;
+  background: #0a1326;
+  color: white;
+  border: 1px solid #425577;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s;
+}
+
+input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+input::placeholder {
+  color: #72829d;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 15px 16px;
+  margin: 10px 0;
+  border-radius: 14px;
+  border: 1px solid #43587a;
+  background: #233554;
+  color: #f8faff;
+  text-align: left;
+  font: 600 16px 'Sarabun', sans-serif;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  touch-action: manipulation;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+  background: #2f456c;
+}
+
+button.primary {
+  background: linear-gradient(110deg, #f8d888, #d9a94c);
+  color: #121c32;
+  text-align: center;
+  border: 0;
+  font-family: 'Kanit', sans-serif;
+  font-size: 17px;
+  box-shadow: 0 5px 15px rgba(216, 169, 72, 0.25);
+  font-weight: 600;
+  margin-top: 18px;
+}
+
+button.primary:active:not(:disabled) {
+  background: #e6c270;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  color: #f7d689;
+  font-family: 'Kanit', sans-serif;
+  font-size: 15px;
+}
+
+.top b {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #0b1429;
+  border: 1px solid #2e4161;
+}
+
+.good {
+  background: #0f4c3a !important;
+  border-color: #38bfa4 !important;
+  color: #ffffff !important;
+}
+
+.bad {
+  background: #632d3a !important;
+  border-color: #ff7588 !important;
+  color: #ffffff !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.progress {
+  height: 10px;
+  background: #0a1326;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 16px 0;
+  border: 1px solid #2e4161;
+}
+
+.bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #c69a45, #ffe09a);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+#feedback {
+  min-height: 45px;
+  color: #fff3cb;
+  font-weight: 500;
+  font-size: 14px;
+  padding-top: 6px;
+  margin: 4px 0;
+}
+
+small {
+  display: block;
+  color: #9bb0cb;
+  line-height: 1.6;
+  margin-top: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+
+#result {
+  text-align: center;
+}
+
+#resultText {
+  font-size: 34px;
+  color: #ffe29e;
+  margin: 12px 0;
+}
+
+#result button {
+  text-align: center;
+}
+
+#student {
+  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Table styles for dashboard */
+.table-container {
+  max-height: 280px;
+  overflow-y: auto;
+  margin: 12px 0;
+  border: 1px solid #344665;
+  border-radius: 12px;
+  background: #0d172e;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #283854;
+}
+
+th {
+  background: #172442;
+  color: var(--gold);
+  font-family: 'Kanit', sans-serif;
+  position: sticky;
+  top: 0;
+}
+
+td {
+  color: #e2ebfb;
+}
+
+/* Custom In-app Notification Box to replace alert() */
+#toast-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 9, 20, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  padding: 20px;
+}
+
+#toast-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toast-box {
+  background: #172442;
+  border: 1px solid #4b628a;
+  border-radius: 20px;
+  padding: 22px 20px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.toast-box h3 {
+  font-family: 'Kanit', sans-serif;
+  color: var(--gold);
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.toast-box p {
+  color: #e2ebfb;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.toast-box button {
+  background: linear-gradient(110deg, #f8d888, #d9a94c);
+  color: #121c32;
+  border: 0;
+  font-family: 'Kanit', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <!-- Start Screen Panel -->
+  <div class="panel" id="start">
+    <h1>⚖️ ศึกพิชิตกฎหมาย</h1>
+    <p>แบบทดสอบ เรื่อง กฎหมายเกี่ยวกับตนเองและครอบครัว<br>วิชาสังคมศึกษา ชั้นมัธยมศึกษาปีที่ 6</p>
+    <div class="desc-left">
+      ✨ <b>กติกาภารกิจ:</b><br>
+      • คำถามทั้งหมด 15 ข้อ (สุ่มลำดับ)<br>
+      • ตอบถูกรับข้อละ 1 คะแนน<br>
+      • บันทึกคะแนนสะสมบนอุปกรณ์อัตโนมัติ
+    </div>
+    
+    <label for="name">ชื่อ–นามสกุล</label>
+    <input id="name" placeholder="กรอกชื่อ–นามสกุลของคุณ" autocomplete="name">
+    
+    <label for="room">ชั้น / เลขที่</label>
+    <input id="room" placeholder="เช่น ม.6/1 เลขที่ 12" autocomplete="off">
+    
+    <button class="primary" onclick="begin()">🚀 เริ่มทำแบบทดสอบ</button>
+    <button onclick="openDashboard()" style="background: #172442; text-align: center; border: 1px solid #43587a; color: #f4c96a;">📊 เปิดดูคะแนนรวมทั้งหมดในเครื่อง</button>
+    <small>ระบบบันทึกคะแนนสะสมบนอุปกรณ์นี้อัตโนมัติ</small>
+  </div>
+
+  <!-- Game Play Screen Panel -->
+  <div class="panel hide" id="game">
+    <div class="top">
+      <b id="count">ข้อ 1 / 15</b>
+      <b id="score">คะแนน 0</b>
+    </div>
+    <div class="progress">
+      <div class="bar" id="bar"></div>
+    </div>
+    <h2 id="question">กำลังโหลดคำถาม...</h2>
+    <div id="choices"></div>
+    <p id="feedback" aria-live="polite"></p>
+    <button class="primary hide" id="next" onclick="advance()">ข้อต่อไป →</button>
+  </div>
+
+  <!-- Result Screen Panel -->
+  <div class="panel hide" id="result">
+    <h1>🏆 ภารกิจสำเร็จ!</h1>
+    <h2 id="resultText">0 / 15 คะแนน</h2>
+    <p id="student"></p>
+    <p id="date" style="font-size: 13px; color: #9bb0cb; margin-top: -8px;"></p>
+    <button class="primary" onclick="downloadSingle()">📥 ดาวน์โหลดผลคะแนนเฉพาะบุคคล (CSV)</button>
+    <button onclick="openDashboard()" style="background: #172442; text-align: center; border: 1px solid #43587a; color: #f4c96a;">📊 ดูคะแนนรวมของทุกคน</button>
+    <button onclick="location.reload()" style="background: #1e2c47; text-align: center; border: 1px solid #415579;">🔄 กลับหน้าแรก</button>
+  </div>
+
+  <!-- Dashboard / Score Summary Panel -->
+  <div class="panel hide" id="dashboard">
+    <h1>📊 คะแนนรวมทั้งหมด</h1>
+    <p id="totalRecordsCount" style="font-size: 13px; margin: 0 0 10px;">บันทึกทั้งหมด: 0 รายการ</p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>ชื่อ - นามสกุล</th>
+            <th>ชั้น/เลขที่</th>
+            <th>คะแนน</th>
+            <th>เวลา</th>
+          </tr>
+        </thead>
+        <tbody id="scoreTableBody">
+          <!-- Populated via JS -->
+        </tbody>
+      </table>
+    </div>
+    <button class="primary" onclick="downloadAllCSV()">📥 ดาวน์โหลดคะแนนรวมทั้งหมด (CSV)</button>
+    <button onclick="clearAllScores()" style="background: #632d3a; border-color: #ff7588; text-align: center;">🗑️ ล้างข้อมูลคะแนนทั้งหมด</button>
+    <button onclick="backToStart()" style="background: #1e2c47; text-align: center; border: 1px solid #415579;">← กลับหน้าหลัก</button>
+  </div>
+</div>
+
+<!-- Custom Message Modal (Replaces alert) -->
+<div id="toast-overlay">
+  <div class="toast-box">
+    <h3>แจ้งเตือนจากระบบ</h3>
+    <p id="toast-message">กรุณากรอกข้อมูลให้ครบถ้วน</p>
+    <button onclick="closeToast()">ตกลง</button>
+  </div>
+</div>
+
+<script>
+const data = [
+  ['ผู้เยาว์ หมายถึง บุคคลในข้อใดตามกฎหมาย',['บุคคลที่อายุไม่ถึง 18 ปี','บุคคลที่ยังไม่บรรลุนิติภาวะ','บุคคลที่กำลังศึกษาอยู่ในโรงเรียน','บุคคลที่ยังไม่มีบัตรประชาชน'],1,'ผู้เยาว์คือบุคคลที่ยังไม่บรรลุนิติภาวะ'],
+  ['ผู้แทนโดยชอบธรรมที่เป็น "บิดามารดา" ตามกฎหมายเรียกว่าอะไร',['ผู้ปกครอง','ผู้พิทักษ์','ผู้อนุบาล','ผู้ใช้อำนาจปกครอง'],3,'บิดามารดาถือเป็นผู้ใช้อำนาจปกครอง'],
+  ['การสิ้นสุดของการเป็นผู้เยาว์ด้วยการบรรลุนิติภาวะตามอายุ ต้องมีอายุครบกี่ปีบริบูรณ์',['15 ปีบริบูรณ์','17 ปีบริบูรณ์','18 ปีบริบูรณ์','20 ปีบริบูรณ์'],3,'ผู้เยาว์บรรลุนิติภาวะเมื่ออายุครบ 20 ปีบริบูรณ์'],
+  ['ผู้เยาว์จะบรรลุนิติภาวะด้วยการสมรสได้ ต้องมีอายุตามเงื่อนไขในข้อใด',['อายุ 15 ปี และได้รับความยินยอม','อายุ 17 ปี และได้รับความยินยอมจากบิดามารดา/ผู้ปกครอง','อายุ 18 ปี โดยไม่ต้องขอความยินยอม','อายุ 20 ปีขึ้นไป'],1,'การสมรสทำได้เมื่อชายหญิงมีอายุ 17 ปีบริบูรณ์ และได้รับความยินยอมจากบิดามารดาหรือผู้ปกครอง'],
+  ['นิติกรรมในข้อใดที่ผู้เยาว์สามารถทำได้ด้วยตนเองโดยได้รับประโยชน์ฝ่ายเดียว',['การซื้อโทรศัพท์มือถือ','การได้รับทุนการศึกษาโดยไม่มีเงื่อนไขผูกพัน','การทำสัญญากู้ยืมเงิน','การซื้อรถจักรยานยนต์'],1,'การรับทุนการศึกษาถือเป็นการกระทำที่เป็นคุณประโยชน์แก่ผู้เยาว์ฝ่ายเดียว'],
+  ['ผู้เยาว์สามารถทำพินัยกรรมได้เองเมื่อมีอายุครบกี่ปีบริบูรณ์',['15 ปีบริบูรณ์','17 ปีบริบูรณ์','18 ปีบริบูรณ์','20 ปีบริบูรณ์'],0,'ผู้เยาว์สามารถทำพินัยกรรมได้เมื่ออายุครบ 15 ปีบริบูรณ์'],
+  ['ตามกฎหมาย ผู้มีสิทธิทำบัตรประจำตัวประชาชนต้องมีอายุเท่าใด',['อายุครบ 5 ปี ถึง 60 ปี','อายุครบ 7 ปีบริบูรณ์ ถึง 70 ปีบริบูรณ์','อายุครบ 10 ปี ถึง 65 ปี','อายุครบ 15 ปีขึ้นไป'],1,'ผู้มีสิทธิทำบัตรประชาชนต้องมีสัญชาติไทยและมีอายุครบ 7 ปีบริบูรณ์ ถึง 70 ปีบริบูรณ์'],
+  ['บัตรประจำตัวประชาชนมีอายุการใช้งานกี่ปี',['4 ปี','6 ปี','8 ปี','10 ปี'],2,'บัตรประจำตัวประชาชนมีอายุ 8 ปี'],
+  ['เมื่อบัตรประจำตัวประชาชนหมดอายุ หรือสูญหาย ต้องขอทำบัตรใหม่ภายในกี่วัน',['15 วัน','30 วัน','45 วัน','60 วัน'],3,'ต้องขอทำบัตรใหม่ภายใน 60 วัน นับแต่วันที่หมดอายุ สูญหาย หรือชำรุด'],
+  ['บุคคลกลุ่มใดต่อไปนี้ได้รับการยกเว้นไม่ต้องทำบัตรประจำตัวประชาชน',['นักเรียน นักศึกษา','ภิกษุ สามเณร นักพต','ข้าราชการครู','ผู้ที่มีอายุเกิน 50 ปี'],1,'ภิกษุ สามเณร นักพต นักโทษ และผู้พิการเดินไม่ได้ ได้รับยกเว้นไม่ต้องทำบัตรประชาชน'],
+  ['ข้อใดถูกต้องเกี่ยวกับ "บุตรที่ชอบด้วยกฎหมาย" ของบิดาและมารดา',['บุตรที่บิดามารดาจดทะเบียนสมรสกัน','บุตรที่เกิดในโรงเรียนรัฐบาล','บุตรทุกคนที่เกิดจากมารดา','บุตรบุญธรรมที่ไม่ผ่านการจดทะเบียน'],0,'บุตรที่เกิดจากบิดาและมารดาที่จดทะเบียนสมรสกันเป็นบุตรที่ชอบด้วยกฎหมาย'],
+  ['ผู้ที่จะรับบุตรบุญธรรมได้ ต้องมีอายุไม่ต่ำกว่ากี่ปีบริบูรณ์ และแก่กว่าผู้จะเป็นบุตรบุญธรรมอย่างน้อยกี่ปี',['อายุไม่ต่ำกว่า 20 ปี และแก่กว่า 10 ปี','อายุไม่ต่ำกว่า 25 ปี และแก่กว่า 15 ปี','อายุไม่ต่ำกว่า 30 ปี และแก่กว่า 20 ปี','อายุไม่ต่ำกว่า 35 ปี และแก่กว่า 18 ปี'],1,'ผู้รับบุตรบุญธรรมต้องมีอายุไม่ต่ำกว่า 25 ปีบริบูรณ์ และต้องแก่กว่าผู้จะเป็นบุตรบุญธรรมอย่างน้อย 15 ปี'],
+  ['การรับบุตรบุญธรรมจะสมบูรณ์และถูกต้องตามกฎหมายเมื่อใด',['เมื่อจัดพิธีรับขวัญ','เมื่อบิดามารดายินยอมด้วยวาจา','เมื่อมีการจดทะเบียนตามกฎหมาย','เมื่อย้ายชื่อเข้าทะเบียนบ้าน'],2,'การรับบุตรบุญธรรมจะสมบูรณ์ต่อเมื่อได้จดทะเบียนตามกฎหมาย'],
+  ['ทายาทโดยธรรมที่เป็นญาติของผู้วายชนม์ ลำดับแรกตามกฎหมายคือข้อใด',['บิดา มารดา','ผู้สืบสันดาน (ลูก หลาน)','พี่น้องร่วมบิดามารดาเดียวกัน','ปู่ ย่า ตา ยาย'],1,'ทายาทโดยธรรมที่เป็นญาติลำดับแรก คือ ผู้สืบสันดาน'],
+  ['พินัยกรรมแบบใดที่ผู้ทำพินัยกรรมต้องเขียนด้วยลายมือของตนเองทั้งฉบับ',['พินัยกรรมธรรมดา','พินัยกรรมแบบเอกสารฝ่ายเมือง','พินัยกรรมเขียนเอง','พินัยกรรมทำด้วยวาจา'],2,'พินัยกรรมเขียนเอง ผู้ทำพินัยกรรมต้องเขียนด้วยลายมือตนเองทั้งฉบับ พร้อมลงชื่อและวันเดือนปี']
+];
+
+let qs = [], i = 0, points = 0, answered = false, studentName = '', room = '';
+const STORAGE_KEY = 'lawquiz_all_scores_v1';
+const $ = x => document.getElementById(x);
+
+function showToast(msg) {
+  $('toast-message').textContent = msg;
+  $('toast-overlay').classList.add('show');
+}
+
+function closeToast() {
+  $('toast-overlay').classList.remove('show');
+}
+
+function begin() {
+  studentName = $('name').value.trim();
+  room = $('room').value.trim();
+  if(!studentName || !room) {
+    showToast('กรุณากรอกชื่อ-นามสกุล และชั้น/เลขที่ ให้ครบถ้วนก่อนเริ่มทำภารกิจ');
+    return;
+  }
+  qs = [...data].sort(() => Math.random() - .5);
+  $('start').classList.add('hide');$('game').classList.remove('hide');
+  render();
+}
+
+function render() {
+  answered = false;
+  let q = qs[i];
+  $('count').textContent = `ข้อ ${i + 1} / ${qs.length}`;
+  $('score').textContent = `คะแนน ${points}`;
+  $('bar').style.width = `${(i / qs.length) * 100}%`;
+  $('question').textContent = q[0];$('choices').innerHTML = '';
+  $('feedback').textContent = '';$('next').classList.add('hide');
+  
+  q[1].forEach((a, j) => {
+    let b = document.createElement('button');
+    b.textContent = `${'กขคง'[j]}. ${a}`;
+    b.onclick = () => choose(j);
+    $('choices').appendChild(b);
+  });
+}
+
+function choose(j) {
+  if (answered) return;
+  answered = true;
+  let q = qs[i], ok = (j === q[2]);
+  if (ok) points++;
+  
+  [...$('choices').children].forEach((b, k) => { b.disabled = true; if (k === q[2]) b.classList.add('good'); else if (k === j) b.classList.add('bad'); });$('score').textContent = `คะแนน ${points}`;
+  $('feedback').innerHTML = (ok ? '✅ <b>ถูกต้อง!</b> ' : '❌ <b>ยังไม่ถูกต้อง</b> ') + '<br><span style="color:#d7e1f1;font-size:13px;">เฉลย: ' + q[1][q[2]] + ' — ' + q[3] + '</span>';
+  $('next').textContent = (i === qs.length - 1) ? 'ดูผลคะแนนรวม →' : 'ข้อต่อไป →';
+  $('next').classList.remove('hide');
+}
+
+function advance() {
+  i++;
+  if(i < qs.length) {
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  $('game').classList.add('hide');$('result').classList.remove('hide');
+  let percentage = Math.round((points / qs.length) * 100);
+  $('resultText').textContent = `${points} / ${qs.length} คะแนน (${percentage}%)`;
+  $('student').textContent = `${studentName} • ${room}`;
+  let timeStr = new Date().toLocaleString('th-TH');
+  $('date').textContent = 'เวลาส่งผลงาน: ' + timeStr;
+  
+  // Save to consolidated storage
+  let allScores = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  allScores.push({
+    name: studentName,
+    room: room,
+    points: points,
+    total: qs.length,
+    date: timeStr
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(allScores));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openDashboard() {
+  $('start').classList.add('hide');
+  $('result').classList.add('hide');$('dashboard').classList.remove('hide');
+  
+  let allScores = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  $('totalRecordsCount').textContent = `บันทึกคะแนนรวมทั้งหมด: ${allScores.length} รายการ`;
+  
+  let tbody = $('scoreTableBody');
+  tbody.innerHTML = '';
+  
+  if(allScores.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#9bb0cb; padding: 20px;">ยังไม่มีประวัติคะแนนในระบบ</td></tr>`;
+    return;
+  }
+  
+  allScores.slice().reverse().forEach(row => {
+    let tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><b>${escapeHtml(row.name)}</b></td>
+      <td>${escapeHtml(row.room)}</td>
+      <td><span style="color:var(--gold); font-weight:700;">${row.points}</span> / ${row.total}</td>
+      <td style="font-size:11px; color:#9bb0cb;">${escapeHtml(row.date)}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function backToStart() {
+  $('dashboard').classList.add('hide');$('start').classList.remove('hide');
+}
+
+function clearAllScores() {
+  if(confirm('คุณต้องการล้างข้อมูลคะแนนทั้งหมดในเครื่องนี้ใช่หรือไม่?')) {
+    localStorage.removeItem(STORAGE_KEY);
+    openDashboard();
+  }
+}
+
+function downloadSingle() {
+  let rows = [
+    ['ชื่อ', 'ชั้น/เลขที่', 'คะแนน', 'คะแนนเต็ม', 'วันที่'],
+    [studentName, room, points, qs.length, new Date().toLocaleString('th-TH')]
+  ];
+  exportCSV(rows, 'คะแนนกฎหมาย_' + studentName.replace(/[\\/:*?"<>|]/g, '_') + '.csv');
+}
+
+function downloadAllCSV() {
+  let allScores = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  if(allScores.length === 0) {
+    showToast('ยังไม่มีข้อมูลคะแนนสำหรับดาวน์โหลด');
+    return;
+  }
+  let rows = [['ชื่อ', 'ชั้น/เลขที่', 'คะแนน', 'คะแนนเต็ม', 'วันที่']];
+  allScores.forEach(r => {
+    rows.push([r.name, r.room, r.points, r.total, r.date]);
+  });
+  exportCSV(rows, 'คะแนนรวม_ศึกพิชิตกฎหมาย_ม6.csv');
+}
+
+function exportCSV(rows, filename) {
+  let csv = '\ufeff' + rows.map(r => r.map(x => '"' + String(x || '').replaceAll('"', '""') + '"').join(',')).join('\r\n');
+  let a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type: 'text/csv;charset=utf-8'}));
+  a.download = filename;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+</script>
+
+</body>
+</html>
